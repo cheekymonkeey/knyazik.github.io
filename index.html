@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>poydyomgulyat</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .image-container {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .image-container img {
+            width: 400px;
+            height: 200px;
+            border-radius: 5px;
+        }
+
+        .image-caption {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .button-container {
+            text-align: center;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            margin: 10px;
+            border-radius: 5px;
+            color: #fff;
+        }
+
+        .button-primary {
+            background-color: #3498db;
+            border: 1px solid #3498db;
+        }
+
+        .button-secondary {
+            background-color: #2ecc71;
+            border: 1px solid #2ecc71;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="image-container">
+        <img src="sources/images/cat1.jpg" alt="Пустая картинка" width="400" height="200">
+        <p class="image-caption">Викулёчик, пойдешь гулять? :)</p>
+    </div>
+
+    <div class="button-container">
+        <a href="second.html" class="button button-primary">Согласиться</a>
+        <a href="#" id="rejectButton" class="button button-secondary" ontouchstart="moveButton()">Отказаться</a>
+    </div>
+
+    <script>
+        function moveButton() {
+            var button = document.getElementById('rejectButton');
+            var maxX = window.innerWidth - button.clientWidth;
+            var maxY = window.innerHeight - button.clientHeight;
+
+            var randomX = Math.floor(Math.random() * maxX);
+            var randomY = Math.floor(Math.random() * maxY);
+
+            button.style.position = 'absolute';
+            button.style.left = randomX + 'px';
+            button.style.top = randomY + 'px';
+        }
+    </script>
+
+</body>
+</html>
